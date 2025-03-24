@@ -1,0 +1,24 @@
+{
+  "name": "04-clean-ddd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pcampina/04-clean-DDD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pcampina/04-clean-DDD/issues"
+  },
+  "homepage": "https://github.com/pcampina/04-clean-DDD#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.13.12",
+    "typescript": "^5.8.2"
+  }
+}
