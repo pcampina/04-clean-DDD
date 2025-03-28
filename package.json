@@ -21,6 +21,7 @@
   "homepage": "https://github.com/pcampina/04-clean-DDD#readme",
   "description": "",
   "devDependencies": {
+    "@faker-js/faker": "9.6.0",
     "@rocketseat/eslint-config": "2.2.2",
     "@types/node": "22.13.12",
     "eslint": "8.57.1",
