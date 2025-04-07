@@ -45,7 +45,7 @@ describe('Edit Question', () => {
 
     inMemoryQuestionsRepository.create(newQuestion)
 
-    expect(() => {
+    await expect(() => {
       return sut.execute({
         questionId: newQuestion.id.toString(),
         authorId: 'author-2',
