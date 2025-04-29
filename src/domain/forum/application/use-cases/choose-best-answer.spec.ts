@@ -4,6 +4,7 @@ import { makeAnswer } from 'mocks/factories/make-answer'
 import { InMemoryQuestionsRepository } from 'mocks/repositories/in-memory-questions-repository'
 import { ChooseBestAnswerUseCase } from './choose-best-answer'
 import { makeQuestion } from 'mocks/factories/make-question'
+import { ResourceNotFoundError } from './errors/resource-not-found.error'
 
 let inMemoryAnswersRepository: InMemoryAnswersRepository
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository
@@ -50,11 +51,12 @@ describe('Choose Question Best Answer', () => {
     inMemoryQuestionsRepository.create(question)
     inMemoryAnswersRepository.create(answer)
 
-    await expect(() => {
-      return sut.execute({
-        authorId: answer.id.toString(),
-        answerId: 'answer-2',
-      })
-    }).rejects.toBeInstanceOf(Error)
+    const result = await sut.execute({
+      authorId: answer.id.toString(),
+      answerId: 'answer-2',
+    })
+
+    expect(result.isLeft()).toBe(true)
+    expect(result.value).toBeInstanceOf(ResourceNotFoundError)
   })
 })
